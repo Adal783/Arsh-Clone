@@ -554,7 +554,6 @@ const InvoiceForm: React.FC<InvoiceFormProps> = ({ onClose, onSubmit, editingInv
                 </div>
               </div>
             </div>
-            </div>
 
             {/* Form Actions */}
             <div className="flex justify-end space-x-4 pt-6 border-t border-gray-700">
