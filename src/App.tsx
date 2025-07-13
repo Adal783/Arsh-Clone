@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useSupabase } from './hooks/useSupabase';
+import Auth from './components/Auth';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
 import ChartOfAccounts from './components/ChartOfAccounts';
@@ -10,7 +12,20 @@ import KPIs from './components/KPIs';
 import AIInsights from './components/AIInsights';
 
 function App() {
+  const { user, loading } = useSupabase();
   const [activeTab, setActiveTab] = useState('dashboard');
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+        <div className="text-white text-xl">Loading...</div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return <Auth />;
+  }
 
   const renderContent = () => {
     switch (activeTab) {
