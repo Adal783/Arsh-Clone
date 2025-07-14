@@ -207,10 +207,10 @@ npm install @supabase/supabase-js
 
 ## 🎯 **Step 6: Environment Variables**
 
-Create `.env.local`:
+Create `.env.local` (for Vite projects):
 ```bash
-REACT_APP_SUPABASE_URL=https://your-project-id.supabase.co
-REACT_APP_SUPABASE_ANON_KEY=your-anon-key
+VITE_SUPABASE_URL=https://your-project-id.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
 ```
 
 ## 📱 **Step 7: Test Your Setup**
